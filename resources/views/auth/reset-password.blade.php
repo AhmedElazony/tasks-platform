@@ -1,4 +1,6 @@
-<x-guest-layout>
+@props(['headLine' => 'Reset Your Password!'])
+
+<x-guest-layout :headLine="$headLine">
     <form method="POST" action="{{ route('password.store') }}">
         @csrf
 
