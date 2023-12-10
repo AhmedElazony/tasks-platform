@@ -18,7 +18,7 @@
                     </x-nav-link>
                 </div>
                 {{-- TODO: make it simpler. --}}
-                @if(auth()->user()->roles->first()->pivot->role_id === 1)
+                @if(auth()->user()->role_id === 1)
                     <div class="hidden space-x-8 border-8 border-gray-900 sm:ms-6 sm:flex">
                         <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                             {{ __('Dashboard') }}
@@ -79,7 +79,7 @@
             <x-responsive-nav-link :href="route('home')" :active="request()->routeIs('home')">
                 {{ __('Home') }}
             </x-responsive-nav-link>
-            @if(auth()->user()->roles->first()->pivot->role_id === 1)
+            @if(auth()->user()->role_id === 1)
                 <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                     {{ __('Dashboard') }}
                 </x-responsive-nav-link>
