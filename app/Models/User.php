@@ -60,4 +60,12 @@ class User extends Authenticatable
     {
         return $this->belongsTo(Role::class);
     }
+    public function scopeMentor($query)
+    {
+        return $query->where('role_id', '=', 1);
+    }
+    public function scopeStudent($query)
+    {
+        return $query->where('role_id', '=', 2);
+    }
 }
