@@ -22,6 +22,9 @@ Route::get('/', function () {
 Route::get('/dashboard', [MentorController::class, 'index'])
     ->middleware(['auth', 'verified', 'admin'])->name('dashboard');
 
+Route::post('/dashboard/add-student', [MentorController::class, 'storeStudent'])
+    ->middleware(['auth', 'verified', 'admin'])->name('dashboard.add-student');
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');

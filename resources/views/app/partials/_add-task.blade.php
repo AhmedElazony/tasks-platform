@@ -1,4 +1,4 @@
-<header class="max-w-xl">
+<header class="max-w-xl" id="add-task">
     <h2 class="text-lg font-medium text-gray-900">
         {{ __('Manage Tasks') }}
     </h2>

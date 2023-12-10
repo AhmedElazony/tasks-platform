@@ -23,8 +23,13 @@
             <!-- Page Heading -->
             @if (isset($header))
                 <header class="bg-gray-300 shadow">
-                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8 flex items-center">
                         {{ $header }}
+                        @if ((auth()->user()->role_id === \App\Models\Mentor::ROLE_ID))
+                            <a href="#assign-student" class="ml-3 text-blue-500 hover:text-blue-800 active:text-blue-800">assign students</a>
+                            <a href="#add-course" class="ml-3 text-blue-500 hover:text-blue-800 active:text-blue-800">add courses</a>
+                            <a href="#add-task" class="ml-3 text-blue-500 hover:text-blue-800 active:text-blue-800">add tasks</a>
+                        @endif
                     </div>
                 </header>
             @endif
